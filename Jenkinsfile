@@ -8,8 +8,10 @@ pipeline {
   }
   stages {
     stage('HELLO WORLD'){
-        echo "Hello World! This is coming from a config as code step"     
-     }
+        steps{
+            echo "Hello World! This is coming from a config as code step"     
+        }
+    }
     stage('Build') {
       steps {
         sh './jenkins/build.sh'
