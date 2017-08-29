@@ -42,5 +42,12 @@ pipeline {
         sh './jenkins/deploy.sh dev'
       }
     }
+    stage('Deploy to Staging') {
+      steps {
+        input(message: 'Deploy to staging?', ok: 'Fire away!')
+        sh './jenkins/deploy.sh staging'
+        sh 'echo Notifying appropriate team members!'
+      }
+    }
   }
 }
